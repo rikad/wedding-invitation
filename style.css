@@ -116,3 +116,43 @@ body {
 #acara > div {
     margin-left: 48px;
 }
+
+
+.flex-container {
+    display: flex;
+}
+
+.dot {
+    height: 45px;
+    width: 45px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+
+#chatContainer {
+    height: 60vh;
+    overflow: scroll;
+}
+
+#chatContainer > .flex-container > p {
+    background: white;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 0;
+    margin-left: 12px;
+    width: 100%;
+}
+
+#chatContainer > .flex-container > div > span {
+    position: relative;
+}
+#chatContainer > .flex-container > div > span > b {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);    
+    color: white
+}
+
