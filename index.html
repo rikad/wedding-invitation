@@ -11,15 +11,24 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Tangerine:wght@700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <main id="app">
-        <div class="page"> 
-            <section style="background-image: url('./img/0.png'); background-position: center; background-size: 100%; background-repeat: no-repeat;">
+        <audio id="myAudio" loop>
+            <source src="./songs/song1.mp3" type="audio/mpeg">
+        </audio>
+        <div class="audio">
+            <img id="audioBtn" onclick="playAudio()" src="img/play.svg" width="45" srcset="">
+        </div>
+
+        <div class="page">
+            <section
+                style="background-image: url('./img/0.png'); background-position: center; background-size: 100%; background-repeat: no-repeat;">
                 <div id="h1" class="title-0">
                     <div style="font-family: 'Tangerine', cursive; font-size: 52px; text-align: center;">
                         The Wedding of
@@ -37,11 +46,20 @@
                         <u>Al - Biruni</u>
                     </div>
                 </div>
-        
-                <!-- <div id="openBtnC">
-                    <a href="#info-calon" style="margin: auto;"><button class="button-open" role="button">Open</button></a>
-                </div>                     -->
 
+                <input class="modal-state" id="modal-1" type="checkbox" />
+                <div class="modal" style="font-family: 'Caveat', cursive;">
+                    <label class="modal__bg" for="modal-1"></label>
+                    <div class="modal__inner">
+                        <label class="modal__close" for="modal-1"></label>
+                        <h2>Selamat Datang</h2>
+                        <p>
+                            Bapak/Ibu/Saudara/i, <br><br>
+                            Harap Konfirmasi Kehadiran di halaman RSVP <br><br>
+                            Terimakasih
+                        </p>
+                    </div>
+                </div>
             </section>
 
             <section id="info-calon">
@@ -54,13 +72,12 @@
                     <br>
 
                     <p>Dengan memohon rahmat dan ridho Allah SWT kami bermaksud
-                    menyelenggarakan pernikahan putra putri kami:</p>
+                        menyelenggarakan pernikahan putra putri kami:</p>
                 </div>
                 <div style="text-align: center;">
                     <img src="./img/female.jpeg" style="width: 150px; margin: auto;">
                     <br>
                     <p style="font-family: 'Caveat', cursive;">Neli Alfi Munaya</p>
-                    <br>
                     <p>Putri dari</p>
                     <p style="font-family: 'Caveat', cursive;">
                         Bpk. Ir. Hendra Haryana, M.M., M.H. <br>
@@ -71,7 +88,6 @@
                     <img src="./img/male.png" style="width: 150px; margin: auto;">
                     <br>
                     <p style="font-family: 'Caveat', cursive;">Rikad Fauzi Alawi</p>
-                    <br>
                     <p>Putra dari</p>
                     <p style="font-family: 'Caveat', cursive;">
                         Bpk. Rohmat Suhendar <br>
@@ -80,10 +96,11 @@
                     </p>
 
                     <br>
-                    
-                </div>    
+
+                </div>
             </section>
-            <section id="acara" style="background-image: url('./img/6.png'); background-position: center; background-size: 100%; background-repeat: no-repeat;">                
+            <section id="acara"
+                style="background-image: url('./img/6.png'); background-position: center; background-size: 100%; background-repeat: no-repeat;">
                 <hr>
                 <div style="margin-top: 58px;">
                     <div class="entitled-w">
@@ -92,7 +109,7 @@
                     <div class="line"></div>
                     <h2 class="title-1"><span>Akad Nikah</span></h2>
                     <p class="txt-1">
-                        Sabtu,  12 Agustus 2023 <br>
+                        Sabtu, 12 Agustus 2023 <br>
                         Pukul <b>08.00</b> WIB <br>
                     </p>
                     <p class="txt-1"></p>
@@ -100,7 +117,7 @@
                 <div id="h-s1-1">
                     <h2 class="title-1"><span>Resepsi</span></h2>
                     <p class="txt-1">
-                        Sabtu,  12 Agustus 2023 <br>
+                        Sabtu, 12 Agustus 2023 <br>
                         Pukul <b>10.00 - 12:00</b> WIB <br>
                     </p>
                     <p class="txt-1"></p>
@@ -110,16 +127,17 @@
                     <div style="position: absolute; bottom: 24px; right: 18px;">
                         <a href="https://maps.app.goo.gl/qG94n8fjMJsQhJtc9" target="_blank">
                             <img src="./img/maps.svg" style="width: 120px">
+                            <p>Buka Google Maps</p>
                         </a>
                     </div>
                     <p class="txt-1" style="font-family: 'Caveat', cursive; text-decoration: overline;">
-                        <b>Suwandie's Heritage</b> <br>                            
+                        <b>Suwandie's Heritage</b> <br>
                         <b>
-                        Jl. Pangeran Soeriaatmadja
-                        No. 42 <br>
-                        Kotakulon, Kec. Sumedang Sel., <br>
-                        Kab. Sumedang
-                    </b>
+                            Jl. Pangeran Soeriaatmadja
+                            No. 42 <br>
+                            Kotakulon, Kec. Sumedang Sel., <br>
+                            Kab. Sumedang
+                        </b>
                     </p>
                     <p class="txt-1"></p>
                 </div>
@@ -135,20 +153,20 @@
 
                     <p>
                         <a href="https://forms.gle/9w9ire7qgwRyb1i57" target="_blank" rel="noopener noreferrer">
-                            Klik Disini</a> untuk konfirmasi kehadiran dan mengirim ucapan & doa
+                            Klik Disini</a> untuk konfirmasi kehadiran, mengirim ucapan & doa
                     </p>
 
                     <div id="chatContainer">
-                        
+
                     </div>
-                    
+
                 </div>
 
                 <p style="text-align: center; font-family: 'Caveat', cursive; margin-top: 32px; margin-bottom: 32px;">
                     Atas Doa Bapak/Ibu/Sudara/i<br>
                     Kami Ucapkan terima kasih
                 </p>
-                
+
             </section>
 
         </div>

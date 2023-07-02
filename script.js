@@ -1,11 +1,28 @@
+const link = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQkHuC23We9rcH7ZsM1PdaT1g3RGSAjG4qpXpk8CIelBU2k7XZXQfpznlvDzGWbr-NXdetaFkw8LeF4/pub?output=tsv'
+const audio = document.getElementById("myAudio"); 
+const audioBtn = document.getElementById("audioBtn"); 
+
+function playAudio() { 
+    if(audio.paused) {
+        audio.play()
+        audioBtn.src = './img/pause.svg'      
+        console.log('played');    
+    } else {
+        audio.pause()
+        audioBtn.src = './img/play.svg'      
+        console.log('paused');
+
+    }
+} 
 
 async function fetchDoa() {
-    const link = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQkHuC23We9rcH7ZsM1PdaT1g3RGSAjG4qpXpk8CIelBU2k7XZXQfpznlvDzGWbr-NXdetaFkw8LeF4/pub?output=tsv'
-
     let res = await fetch(link)
     let csv = await res.text()
-    let data = csv.split('\r\n')
 
+    //remove html
+    csv = csv.replace(/(<([^>]+)>)/ig, '')
+    
+    let data = csv.split('\r\n')
     data.shift()
 
     data = data.map(x => x.split('\t') )
@@ -19,12 +36,14 @@ function displayData(data) {
 
     data = data.map(x => {
         const random = Math.floor(Math.random() * 10);
+        let initial = x[1].split('')
+        initial = initial[0].toUpperCase();
 
         return `
             <div class="flex-container">
                 <div>
                     <span class="dot" style="background: ${color[random]}">
-                        <b>R</b>
+                        <b>${initial}</b>
                     </span>
                 </div>
                 <p>
@@ -40,4 +59,15 @@ function displayData(data) {
     el.innerHTML = data.join('\n')
 }
 
+
 fetchDoa()
+document.querySelector('.modal-state').checked = true
+
+setTimeout(() => {
+    window.onscroll = function () {  
+        // console.log('scroll');
+        if(audio.paused) {
+            playAudio()
+        }
+    }    
+}, 1111);
