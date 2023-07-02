@@ -2,6 +2,23 @@ const link = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQkHuC23We9rcH7ZsM
 const audio = document.getElementById("myAudio"); 
 const audioBtn = document.getElementById("audioBtn"); 
 
+const acara = [
+    '10.00 - 12:00',
+    '10.00 - 12:00',
+    '12.00 - 02:00'
+]
+
+const urlParams = new URLSearchParams(window.location.search)
+const to = urlParams.get('to') || 'Tamu'
+const sesi = urlParams.get('sesi') || 1
+
+
+document.querySelector('#toName > u').innerText = to
+document.querySelector('#jadwalAcara > b').innerText = acara[parseInt(sesi)]
+
+console.log(to);
+console.log(sesi);
+
 function playAudio() { 
     if(audio.paused) {
         audio.play()
