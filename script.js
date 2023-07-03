@@ -5,7 +5,7 @@ const audioBtn = document.getElementById("audioBtn");
 const acara = [
     '10.00 - 12:00',
     '10.00 - 12:00',
-    '12.00 - 02:00'
+    '12.00 - 14:00'
 ]
 
 const urlParams = new URLSearchParams(window.location.search)
