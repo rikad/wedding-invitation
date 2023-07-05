@@ -1,3 +1,10 @@
+/* prevent dark mode */
+:root {
+  color-scheme: light only;
+}
+@media (prefers-color-scheme: dark) {}
+/* end prevent */
+
 section {
     position: relative;
     /* height:  */
