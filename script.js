@@ -74,7 +74,7 @@ function displayData(data) {
                     <b>${x[1]}</b> (${x[0]})
                     <br>
                     <br>
-                    ${x[3]}
+                    ${x[2]}
                 </p>
             </div>    
             `
