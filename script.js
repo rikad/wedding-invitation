@@ -64,7 +64,7 @@ function displayData(data) {
                     </span>
                 </div>
                 <p>
-                    <b>${x[1]}</b> 
+                    <b>${x[1]}</b> (${x[0]})
                     <br>
                     <br>
                     ${x[3]}
