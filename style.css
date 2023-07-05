@@ -105,9 +105,19 @@ body {
     margin: auto;
 }
 
+.title-1 {
+  font-size: 32px;
+  font-family: 'Tangerine', cursive;
+  font-weight: bold;
+}
+
 .txt-1 {
     font-size: 16px;
     line-height: 24px;
+    border-radius: 8px;
+    padding: 12px;
+    width: 242px;
+    background-color: rgb(255 255 255 / 61%);
 }
 
 .txt-1,
@@ -121,7 +131,8 @@ body {
 }
 
 #acara>div {
-    margin-left: 48px;
+    margin-left: 24px;
+    margin-right: 42px;
 }
 
 
@@ -164,6 +175,10 @@ body {
     color: white
 }
 
+.nama {
+  font-family: 'Caveat', cursive;
+  font-size: 24px;
+}
 
 .audio {
     padding: 8px;

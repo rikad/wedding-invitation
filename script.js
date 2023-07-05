@@ -1,6 +1,7 @@
 const link = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQkHuC23We9rcH7ZsM1PdaT1g3RGSAjG4qpXpk8CIelBU2k7XZXQfpznlvDzGWbr-NXdetaFkw8LeF4/pub?output=tsv'
 const audio = document.getElementById("myAudio"); 
 const audioBtn = document.getElementById("audioBtn"); 
+let play = true
 
 const acara = [
     '10.00 - 12:00',
@@ -20,15 +21,18 @@ console.log(to);
 console.log(sesi);
 
 function playAudio() { 
-    if(audio.paused) {
+    if(!play) {
         audio.play()
         audioBtn.src = './img/pause.svg'      
         console.log('played');    
+
+        play = true
     } else {
         audio.pause()
         audioBtn.src = './img/play.svg'      
         console.log('paused');
 
+        play = false
     }
 } 
 
@@ -43,6 +47,9 @@ async function fetchDoa() {
     data.shift()
 
     data = data.map(x => x.split('\t') )
+    data = data.sort((a, b) => {
+        return new Date(b[0]) - new Date(a[0]);
+    });
 
     displayData(data)
 }
@@ -82,8 +89,8 @@ document.querySelector('.modal-state').checked = true
 
 setTimeout(() => {
     window.onscroll = function () {  
-        // console.log('scroll');
-        if(audio.paused) {
+        if(play && audio.paused) {
+            playAudio()
             playAudio()
         }
     }    
