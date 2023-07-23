@@ -47,9 +47,14 @@ async function fetchDoa() {
     data.shift()
 
     data = data.map(x => x.split('\t') )
-    data = data.sort((a, b) => {
-        return new Date(b[0]) - new Date(a[0]);
-    });
+    // data = data.sort((a, b) => {
+    //     return new Date(b[0]) < new Date(a[0]);
+    // });
+
+    data = data.reverse()
+    data.pop()
+
+    console.log(data);
 
     displayData(data)
 }
